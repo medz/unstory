@@ -109,6 +109,30 @@ void defineHistoryMatrixTests({
       expect(event.location.fragment, firstLocation.fragment);
     });
 
+    test('back and forward move through the stack', () async {
+      final history = create();
+      addTearDown(history.dispose);
+
+      history.push(firstLocation);
+      history.push(secondLocation);
+
+      final backFuture = waitForPop(history);
+      history.back();
+      final backEvent = await backFuture;
+
+      expect(backEvent.action, HistoryAction.pop);
+      expect(backEvent.delta, -1);
+      expect(history.location.path, firstLocation.path);
+
+      final forwardFuture = waitForPop(history);
+      history.forward();
+      final forwardEvent = await forwardFuture;
+
+      expect(forwardEvent.action, HistoryAction.pop);
+      expect(forwardEvent.delta, 1);
+      expect(history.location.path, secondLocation.path);
+    });
+
     test('go can suppress listener notifications', () async {
       final history = create();
       addTearDown(history.dispose);
