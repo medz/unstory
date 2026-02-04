@@ -1,5 +1,8 @@
 # unstory
 
+[![pub](https://img.shields.io/pub/v/unstory.svg)](https://pub.dev/packages/unstory)
+[![test](https://github.com/medz/unstory/actions/workflows/test.yml/badge.svg)](https://github.com/medz/unstory/actions/workflows/test.yml)
+
 A small, cross-platform history abstraction for Dart and Flutter routing.
 
 Unstory provides a minimal, browser-like `History` interface with consistent
