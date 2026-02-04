@@ -60,12 +60,14 @@ final history = createHistory(
 - `go(int)`, `back()`, and `forward()` to move in the history stack.
 - `listen((HistoryEvent) => void)` to observe pop navigations.
 - `dispose()` to release resources.
+- `createHistory({base, strategy})` to select a platform-appropriate history.
 
 Core types:
 
 - `HistoryLocation` wraps a `Uri` plus optional `state`.
 - `HistoryEvent` includes `action`, `location`, and optional `delta`.
 - `HistoryAction` is one of `pop`, `push`, or `replace`.
+- `HistoryStrategy` selects `browser` or `hash` when using `createHistory` on web.
 
 ## Semantics
 

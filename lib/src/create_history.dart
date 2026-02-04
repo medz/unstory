@@ -7,6 +7,9 @@ import 'create_history_stub.dart'
 ///
 /// On web (JS interop available), returns a [BrowserHistory] or [HashHistory]
 /// based on [strategy]. On non-web platforms, returns [MemoryHistory].
+///
+/// The optional [base] is applied to URL generation and parsing for web
+/// histories, and to `createHref` for memory history.
 History createHistory({
   String? base,
   HistoryStrategy strategy = HistoryStrategy.browser,
