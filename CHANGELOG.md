@@ -1,3 +1,8 @@
+## 0.1.1
+
+- Fix repository URL metadata for pub.dev.
+- Add a minimal runnable example in `example/main.dart`.
+
 ## 0.1.0
 
 - Initial release with a cross-platform history abstraction.
