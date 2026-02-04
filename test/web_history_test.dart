@@ -2,6 +2,7 @@
 library;
 
 import 'package:test/test.dart';
+import 'package:unstory/unstory.dart';
 import 'package:unstory/web.dart';
 import 'package:web/web.dart' as web;
 
@@ -28,6 +29,30 @@ void main() {
     firstLocation: Uri.parse('/first?x=1#frag'),
     secondLocation: Uri.parse('/second?y=2#frag2'),
   );
+
+  group('createHistory', () {
+    test('uses browser strategy on web', () {
+      final history = createHistory(strategy: HistoryStrategy.browser);
+      expect(history, isA<BrowserHistory>());
+      history.dispose();
+    });
+
+    test('uses hash strategy on web', () {
+      final history = createHistory(strategy: HistoryStrategy.hash);
+      expect(history, isA<HashHistory>());
+      history.dispose();
+    });
+
+    test('passes base through', () {
+      final history = createHistory(
+        base: '/app',
+        strategy: HistoryStrategy.browser,
+      );
+      expect(history, isA<BrowserHistory>());
+      expect(history.base, '/app');
+      history.dispose();
+    });
+  });
 
   group('BrowserHistory', () {
     test('normalizes base', () {
