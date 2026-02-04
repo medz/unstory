@@ -6,7 +6,7 @@ import 'package:unstory/unstory.dart';
 
 void main() {
   test('createHistory returns memory history on non-web platforms', () {
-    final history = createHistory(strategy: HistoryStrategy.hash);
+    final history = createHistory(strategy: .hash);
     expect(history, isA<MemoryHistory>());
   });
 }

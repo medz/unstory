@@ -6,7 +6,7 @@ import 'package:unstory/unstory.dart';
 void main() {
   final history = createHistory(
     base: '/app',
-    strategy: HistoryStrategy.browser,
+    strategy: .browser,
   );
 
   history.listen((event) {

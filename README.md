@@ -50,7 +50,7 @@ import 'package:unstory/unstory.dart';
 
 final history = createHistory(
   base: '/app',
-  strategy: HistoryStrategy.browser,
+  strategy: .browser,
 );
 ```
 

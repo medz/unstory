@@ -32,22 +32,19 @@ void main() {
 
   group('createHistory', () {
     test('uses browser strategy on web', () {
-      final history = createHistory(strategy: HistoryStrategy.browser);
+      final history = createHistory(strategy: .browser);
       expect(history, isA<BrowserHistory>());
       history.dispose();
     });
 
     test('uses hash strategy on web', () {
-      final history = createHistory(strategy: HistoryStrategy.hash);
+      final history = createHistory(strategy: .hash);
       expect(history, isA<HashHistory>());
       history.dispose();
     });
 
     test('passes base through', () {
-      final history = createHistory(
-        base: '/app',
-        strategy: HistoryStrategy.browser,
-      );
+      final history = createHistory(base: '/app', strategy: .browser);
       expect(history, isA<BrowserHistory>());
       expect(history.base, '/app');
       history.dispose();

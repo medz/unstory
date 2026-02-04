@@ -10,9 +10,6 @@ import 'create_history_stub.dart'
 ///
 /// The optional [base] is applied to URL generation and parsing for web
 /// histories, and to `createHref` for memory history.
-History createHistory({
-  String? base,
-  HistoryStrategy strategy = HistoryStrategy.browser,
-}) {
+History createHistory({String? base, HistoryStrategy strategy = .browser}) {
   return createHistoryImpl(base: base, strategy: strategy);
 }
