@@ -12,7 +12,7 @@ class HashHistory extends UrlBasedHistory {
   /// Creates a [HashHistory] that stores the route in `location.hash`.
   ///
   /// If [window] is omitted, the default browser window is used.
-  HashHistory({super.base, web.Window? window}) : super(window: window);
+  HashHistory({super.base, super.window});
 
   @override
   HistoryLocation get location {

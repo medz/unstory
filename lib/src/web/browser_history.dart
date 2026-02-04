@@ -14,7 +14,7 @@ class BrowserHistory extends UrlBasedHistory {
   /// Creates a [BrowserHistory] that reads/writes path-based URLs.
   ///
   /// If [window] is omitted, the default browser window is used.
-  BrowserHistory({super.base, web.Window? window}) : super(window: window);
+  BrowserHistory({super.base, super.window});
 
   @override
   HistoryLocation get location {
